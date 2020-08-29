@@ -12,7 +12,8 @@ namespace Homework_Warehouse_
         static void Main(string[] args)
         {
             String nameProduct, continueProg, expirationDate;
-            int menuNumber, priceProduct, baseProduct;
+            int menuNumber, baseProduct;
+            double priceProduct;
 
             continueProg = "yes";
             while (continueProg == "yes")
@@ -33,7 +34,7 @@ namespace Homework_Warehouse_
                         nameProduct = Console.ReadLine();
 
                         Console.Write("Enter the Price: ");
-                        priceProduct = CheckInt();
+                        priceProduct = CheckDouble();
 
                         Console.Write("Enter the Base(shelf life): ");
                         baseProduct = CheckInt();
@@ -61,8 +62,10 @@ namespace Homework_Warehouse_
                         foreach (var _collProd in productCollection.GetProdData())
 
                             { 
-                            Console.WriteLine($"ID: {_collProd.ProdID} Name: {_collProd.ProdName}  Price: {_collProd.ProdPrice} Base: {_collProd.ProdBase} Expiration Date: {_collProd.ProdExpri}");
-                            }
+                            Console.WriteLine($"ID: {_collProd.ProdID} Name: {_collProd.ProdName}  Price: {_collProd.ProdPrice} Base: {_collProd.ProdBase}");
+                            Console.WriteLine($"Expiration Date: {_collProd.ProdExpri}");
+                            Console.WriteLine("==========================================");
+                        }
 
                         Console.WriteLine("==========================================");
                         Console.WriteLine("Do you want continue?");
@@ -73,7 +76,9 @@ namespace Homework_Warehouse_
 
                     case 3:
 
-
+                        Console.Clear();
+                        Console.WriteLine("THE END");
+                        Console.ReadKey();
                         break;
                 }
 
@@ -92,6 +97,17 @@ namespace Homework_Warehouse_
             }
 
             return checkResultInt;
+        }
+        static double CheckDouble()
+        {
+            double checkResultDouble;
+
+            while (!double.TryParse(Console.ReadLine(), out checkResultDouble))
+            {
+                Console.Write("Error, please write number: ");
+            }
+
+            return checkResultDouble;
         }
     }
 }

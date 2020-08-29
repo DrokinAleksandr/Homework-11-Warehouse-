@@ -21,7 +21,7 @@ namespace WarehouseLib
     }
     public class prodData
     {
-        public prodData(string newID, string nameProd, int priceProd, int baseProd,string expirationProd)
+        public prodData(string newID, string nameProd, double priceProd, int baseProd,string expirationProd)
         {
             this.ProdID = newID;
             this.ProdName = nameProd;
@@ -32,7 +32,7 @@ namespace WarehouseLib
 
         public string ProdID { get; set; }
         public string ProdName { get; set; }
-        public int ProdPrice { get; set; }
+        public double ProdPrice { get; set; }
         public int ProdBase { get; set; }
         public string ProdExpri { get; set; }
     }
@@ -41,7 +41,7 @@ namespace WarehouseLib
           public static string shelfLifeCalc(int baseProd)
         {
             //DateTime shelfLifeProd;
-            string shelfLifeProd = DateTime.Today.AddDays(baseProd).ToString();
+            string shelfLifeProd = DateTime.Today.AddDays(baseProd).ToString("dd.MM.yyyy");
             return shelfLifeProd;
         }
 
