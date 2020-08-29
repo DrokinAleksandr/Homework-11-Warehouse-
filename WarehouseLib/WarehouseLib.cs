@@ -37,11 +37,11 @@ namespace WarehouseLib
     }
     public class shelfLife
     {
-        public shelfLife(int baseProd)
+          public static string shelfLifeCalc(int baseProd)
         {
-            DateTime shelfLifeProd;
-            shelfLifeProd = DateTime.Today.AddDays(baseProd);
-            return;
+            //DateTime shelfLifeProd;
+            string shelfLifeProd = DateTime.Today.AddDays(baseProd).ToString();
+            return shelfLifeProd;
         }
 
     }

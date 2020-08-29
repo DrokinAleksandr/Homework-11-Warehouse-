@@ -11,7 +11,7 @@ namespace Homework_Warehouse_
     {
         static void Main(string[] args)
         {
-            String nameProduct, continueProg;
+            String nameProduct, continueProg, expirationDate;
             int menuNumber, priceProduct, baseProduct;
 
             continueProg = "yes";
@@ -22,6 +22,7 @@ namespace Homework_Warehouse_
                 Console.WriteLine("1 Add Product\n2 Wiev All Product\n3 Exit\n");
                 Console.Write("Select number: ");
                 menuNumber = CheckInt();
+
 
                 switch (menuNumber)
                 {
@@ -38,6 +39,7 @@ namespace Homework_Warehouse_
 
                         string guid = System.Guid.NewGuid().ToString();
 
+                        expirationDate= shelfLife.shelfLifeCalc(baseProduct);
 
                         prodData DataAboutProduct = new prodData(newID: guid, nameProd: nameProduct, priceProd: priceProduct, baseProd: baseProduct);
 
