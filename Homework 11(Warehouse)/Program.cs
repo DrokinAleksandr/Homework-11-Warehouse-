@@ -27,6 +27,7 @@ namespace Homework_Warehouse_
                 switch (menuNumber)
                 {
                     case 1:
+
                         Console.WriteLine("Please fill the data of your product");
                         Console.Write("Enter the Name: ");
                         nameProduct = Console.ReadLine();
@@ -41,7 +42,7 @@ namespace Homework_Warehouse_
 
                         expirationDate= shelfLife.shelfLifeCalc(baseProduct);
 
-                        prodData DataAboutProduct = new prodData(newID: guid, nameProd: nameProduct, priceProd: priceProduct, baseProd: baseProduct);
+                        prodData DataAboutProduct = new prodData(newID: guid, nameProd: nameProduct, priceProd: priceProduct, baseProd: baseProduct, expirationProd: expirationDate) ;
 
                         productCollection.Add(DataAboutProduct);
                         Console.WriteLine("==============================");
@@ -52,12 +53,27 @@ namespace Homework_Warehouse_
                         Console.Clear();
                         break;
 
-
                     case 2:
+
+                        Console.WriteLine("Please wait, we are working on data output");
+                        Console.WriteLine("==========================================");
+
+                        foreach (var _collProd in productCollection.GetProdData())
+
+                            { 
+                            Console.WriteLine($"ID: {_collProd.ProdID} Name: {_collProd.ProdName}  Price: {_collProd.ProdPrice} Base: {_collProd.ProdBase} Expiration Date: {_collProd.ProdExpri}");
+                            }
+
+                        Console.WriteLine("==========================================");
+                        Console.WriteLine("Do you want continue?");
+                        Console.Write("Write answer(yes/no): ");
+                        continueProg = Console.ReadLine();
+                        Console.Clear();
                         break;
 
-
                     case 3:
+
+
                         break;
                 }
 

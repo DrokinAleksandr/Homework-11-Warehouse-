@@ -21,19 +21,20 @@ namespace WarehouseLib
     }
     public class prodData
     {
-        public prodData(string newID, string nameProd, int priceProd, int baseProd)
+        public prodData(string newID, string nameProd, int priceProd, int baseProd,string expirationProd)
         {
             this.ProdID = newID;
             this.ProdName = nameProd;
             this.ProdPrice = priceProd;
             this.ProdBase = baseProd;
-            //this.shelfLife = ;
+            this.ProdExpri = expirationProd;
         }
 
         public string ProdID { get; set; }
         public string ProdName { get; set; }
         public int ProdPrice { get; set; }
         public int ProdBase { get; set; }
+        public string ProdExpri { get; set; }
     }
     public class shelfLife
     {
